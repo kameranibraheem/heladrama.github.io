@@ -1,74 +1,51 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تجربة مشغل الفيديو</title>
+    
+    <!-- مكتبة HLS ومكتبة Fluid Player -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
 
-<!-- أكواد الإعلانات الخاصة بـ Monetag -->
-<script>(function(s){s.dataset.zone='11237068',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-<script>(function(s){s.dataset.zone='11237061',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-<script>(function(s){s.dataset.zone='11237063',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-
-<!-- مكتبات HLS و Fluid Player -->
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>اختبار الإعلانات | HELA DRAMA</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-
-<style>
-*{ margin:0; padding:0; box-sizing:border-box; font-family:Cairo,sans-serif; }
-body{ background:#080808; color:#fff; }
-header{ padding:25px; text-align:center; background:#111; box-shadow:0 0 30px rgba(255,0,0,.2); }
-.logo{ font-size:42px; font-weight:900; color:#ff1b1b; }
-.container{ width:95%; max-width:1100px; margin:auto; padding:30px 15px; }
-.title{ font-size:30px; text-align:center; margin-bottom:20px; font-weight:bold; }
-.player{ position:relative; padding-top:56.25%; background:#000; border-radius:16px; overflow:hidden; }
-.player video, .player .fluid_video_wrapper { position:absolute !important; top:0 !important; left:0 !important; width:100% !important; height:100% !important; border:none; }
-</style>
-
+    <style>
+        body { background: #000; color: #fff; text-align: center; font-family: sans-serif; padding: 20px; }
+        .player-box { max-width: 800px; margin: 0 auto; position: relative; padding-top: 56.25%; }
+        .player-box video, .player-box .fluid_video_wrapper { position: absolute; top: 0; left: 0; width: 100% !important; height: 100% !important; }
+    </style>
 </head>
-
 <body>
 
-<header>
-<div class="logo">HELA DRAMA</div>
-</header>
+    <h2>اختبار إعلان الفيديو على الآيفون</h2>
 
-<div class="container">
-<div class="title">اختبار مشغل الفيديو والإعلانات</div>
+    <div class="player-box">
+        <video id="test-player" controls playsinline webkit-playsinline>
+            <source src="https://vz-f08fe342-443.b-cdn.net/ad861e8b-c3a0-451f-ac9d-c726d95583b5/playlist.m3u8" type="application/x-mpegURL" />
+        </video>
+    </div>
 
-<div class="player">
-    <video id="hela-video-player" controls preload="auto" playsinline webkit-playsinline>
-        <source src="https://vz-f08fe342-443.b-cdn.net/ad861e8b-c3a0-451f-ac9d-c726d95583b5/playlist.m3u8" type="application/x-mpegURL" />
-    </video>
-</div>
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    var player = fluidPlayer('hela-video-player', {
-        layoutControls: {
-            fillToContainer: true,
-            responsive: true,
-            autoPlay: false
-        },
-        vastOptions: {
-            allowShortcode: true,
-            adList: [
-                {
-                    roll: 'preRoll',
-                    /* رابط VAST تجريبي مضموني من Google للاختبار */
-                    vastTag: 'https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/12431908/advp_sdk_demo&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&submodel=2'
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var myPlayer = fluidPlayer('test-player', {
+                layoutControls: {
+                    fillToContainer: true,
+                    responsive: true,
+                    autoPlay: false
+                },
+                vastOptions: {
+                    allowShortcode: true,
+                    adList: [
+                        {
+                            roll: 'preRoll',
+                            /* إعلان جوجل التجريبي */
+                            vastTag: 'https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/12431908/advp_sdk_demo&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&submodel=2'
+                        }
+                    ]
                 }
-            ]
-        }
-    });
-});
-</script>
+            });
+        });
+    </script>
 
 </body>
 </html>
