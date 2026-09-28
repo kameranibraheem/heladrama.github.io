@@ -6,9 +6,11 @@
 <!-- أكواد الشبكات الإعلانية الموجودة سابقاً -->
 <script>(function(s){s.dataset.zone='11237068',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 <script>(function(s){s.dataset.zone='11237061',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-<script>(function(s){s.dataset.zone='11237063',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
-<!-- استدعاء مشغل إعلانات الفيديو Fluid Player -->
+<!-- 1. استدعاء مكتبة hls.js لتشغيل روابط m3u8 على كافة المتصفحات -->
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<!-- 2. استدعاء مشغل Fluid Player -->
 <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
 
 <meta charset="UTF-8">
@@ -16,7 +18,7 @@
 
 <title>مسلسل اسطنبول راساً على عقب الحلقة 16 | HELA DRAMA</title>
 
-<meta name="description" content="تبدأ أحداث الحلقة السادسة عشرة من مسلسل اسطنبول رأساً على عقب بعد انكشاف واحدة من أكبر الأسرار التي قلبت حياة الشخصيات رأساً على عقب، حيث أصبحت الحقيقة معروفة الآن للجميع: ناز وملك شقيقتان توأم، وفخرية هي والدتهما، وسونر هو والدهما. لكن ظهور هذه الحقيقة لم يجمع العائلة كما كان متوقعاً، بل فتح باباً جديداً من المواجهات والانتقام.">
+<meta name="description" content="تبدأ أحداث الحلقة السادسة عشرة من مسلسل اسطنبول رأساً على عقب بعد انكشاف واحدة من أكبر الأسرار...">
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
@@ -53,16 +55,8 @@ animation:glow 2s infinite alternate;
 }
 
 @keyframes glow{
-from{
-text-shadow:
-0 0 10px red,
-0 0 20px red;
-}
-to{
-text-shadow:
-0 0 20px #ff5050,
-0 0 50px red;
-}
+from{ text-shadow: 0 0 10px red, 0 0 20px red; }
+to{ text-shadow: 0 0 20px #ff5050, 0 0 50px red; }
 }
 
 .container{
@@ -94,7 +88,6 @@ overflow:hidden;
 box-shadow:0 0 30px rgba(255,0,0,.15);
 }
 
-/* تنسيق مشغل الفيديو ليتطابق مع أبعاد الصفحة */
 .player video, .player .fluid_video_wrapper {
 position:absolute !important;
 top:0 !important;
@@ -102,14 +95,6 @@ left:0 !important;
 width:100% !important;
 height:100% !important;
 border:none;
-}
-
-.nav-buttons{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-top:20px;
-gap:10px;
 }
 
 .btn-custom{
@@ -172,39 +157,21 @@ HELA DRAMA
 مسلسل اسطنبول راساً على عقب الحلقة 16
 </div>
 
-<!-- زر الصفحة الرئيسية فوق الفيديو -->
 <div class="home-btn-wrapper">
 <a href="https://hela-drama.com" class="btn-custom">
 🏠 الصفحة الرئيسية
 </a>
 </div>
 
-<!-- مشغل الفيديو المعدل المدمج بإعلان ExoClick VAST -->
+<!-- مشغل الفيديو -->
 <div class="player">
     <video id="hela-video-player" controls preload="auto">
-        <source src="https://vz-f08fe342-443.b-cdn.net/ad861e8b-c3a0-451f-ac9d-c726d95583b5/playlist.m3u8" type="video/mp4" />
+        <source src="https://vz-f08fe342-443.b-cdn.net/ad861e8b-c3a0-451f-ac9d-c726d95583b5/playlist.m3u8" type="application/x-mpegURL" />
     </video>
 </div>
 
-<!-- أزرار التنقل بين الحلقات تحت الفيديو مباشرة -->
-<div class="nav-buttons">
-<div></div>
-<div></div>
-</div>
-
-<!-- الوصف تحت الأزرار -->
 <div class="desc">
-تبدأ أحداث الحلقة السادسة عشرة من مسلسل اسطنبول رأساً على عقب بعد انكشاف واحدة من أكبر الأسرار التي قلبت حياة الشخصيات رأساً على عقب، حيث أصبحت الحقيقة معروفة الآن للجميع: ناز وملك شقيقتان توأم، وفخرية هي والدتهما، وسونر هو والدهما. لكن ظهور هذه الحقيقة لم يجمع العائلة كما كان متوقعاً، بل فتح باباً جديداً من المواجهات والانتقام.
-
-تجد فخرية نفسها أمام ابنتيها بعد سنوات طويلة من إخفاء ملك عن عائلة حكمت، وتحاول شرح الأسباب التي دفعتها إلى إبعادها وحمايتها من الماضي، إلا أن ناز وملك لا تستطيعان تجاوز الألم والغضب بسهولة. ناز تشعر بأن والدتها أخفت عنها الحقيقة وتركتها تعيش سنوات وهي تجهل وجود شقيقتها ووالدتها الحقيقية، بينما تحمل ملك غضباً أكبر بعدما اكتشفت أن حياتاً كاملة كان من الممكن أن تعيشها مع عائلتها قد حُرمت منها.
-
-وفي الجهة الأخرى يقف حكمت، جد ناز وملك ووالد سونر، بعدما اكتشف أن فخرية أخفت عنه حفيدة أخرى طوال هذه السنوات. معرفة حكمت بالحقيقة تغيّر موقفه من فخرية بشكل جذري، خصوصاً أنه يرى أن أسرار الماضي لم تعد شأناً عائلياً بسيطاً، بل أصبحت سبباً في سلسلة من المواجهات التي تهدد الجميع. ومع تصاعد غضبه، يدخل حكمت في صراع مباشر مع فخرية ومن يقفون إلى جانبها.
-
-أما سونر، والد ناز وملك، فيجد نفسه أمام مرحلة جديدة بعدما أصبحت ابنته ملك جزءاً واضحاً من حياته، ولم يعد بإمكانه تجاهل السنوات التي عاشتها بعيداً عنه. وجود ابنتيه معاً يفتح أمامه أسئلة كثيرة حول الماضي وما حدث بينه وبين فخرية، في الوقت الذي تحاول فيه العائلة التعامل مع الحقيقة الجديدة.
-
-وفي زينكار، يستمر سكان الحي في الوقوف إلى جانب فخرية بعد المواجهة مع حكمت، بينما يحاول أمير حماية فخرية وابنتيها من النتائج الخطيرة التي ترتبت على ظهور الحقيقة. لكن الخطر لا يقتصر على فخرية وحدها، فـأمير وأوزاي أصبحا في مواجهة مباشرة مع خطة حكمت للانتقام، بعدما تعرضا للخطف في نهاية الحلقة السابقة ووُضعا في قبرين متجاورين وهما فاقدان للوعي.
-
-ومع تصاعد الأحداث، يصبح السؤال الأهم: هل يتمكن أمير وأوزاي من النجاة؟ وهل يستطيع حكمت، بصفته جد ناز وملك ووالد سونر، تنفيذ انتقامه والوصول إلى ما يريده؟ وهل تستطيع فخرية استعادة ثقة ابنتيها بعد سنوات من الأسرار؟ أما ناز وملك، فستجدان نفسيهما أمام واقع جديد تماماً، فبعد أن اكتشفتا أنهما توأم وأن فخرية أمهما وسونر أبوهما، تبدأ الآن أصعب مرحلة وهي محاولة معرفة الحقيقة الكاملة عن الماضي.
+تبدأ أحداث الحلقة السادسة عشرة من مسلسل اسطنبول رأساً على عقب...
 </div>
 
 </div>
@@ -213,10 +180,10 @@ HELA DRAMA
 &#169; 2026 HELA DRAMA
 </footer>
 
-<!-- كود تفعيل مشغل الفيديو مع إعلان VAST -->
+<!-- كود تفعيل المشغل والإعلانات -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    var myPlayer = fluidPlayer('hela-video-player', {
+    var player = fluidPlayer('hela-video-player', {
         layoutControls: {
             fillToContainer: true,
             responsive: true,
@@ -225,8 +192,8 @@ document.addEventListener("DOMContentLoaded", function() {
         vastOptions: {
             adList: [
                 {
-                    roll: 'preRoll', // تشغيل الإعلان قبل بداية الحلقة
-                    vastTag: 'https://s.magsrv.com/v1/vast.php?idz=6042458' // رابط VAST الخاص بك من ExoClick
+                    roll: 'preRoll',
+                    vastTag: 'https://s.magsrv.com/v1/vast.php?idz=6042458'
                 }
             ]
         }
